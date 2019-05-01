@@ -32,7 +32,7 @@ const server = http.createServer((request, response) => {
 	for (var key in friends)
 		response.write(
 			'               <div class="container" style="text-align: left"> \n' +
-			'               <h2></h2>' + key + '<br> \n' +
+			'               <h2>' + key + '</h2><br> \n' +
 			'               <table class="table table-bordered table-hover"> \n' +
 			'                       <thead> \n' +
 			'                               <tr> \n' +
