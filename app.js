@@ -1,6 +1,6 @@
 const http = require('http');
-const hostname = 'localhost';
-const port = 3000;
+const hostname = 'leia.cs.spu.edu';
+const port = 3015;
 
 var friends = require("./friends.json"); // Once for all times
 
@@ -36,6 +36,7 @@ const server = http.createServer((request, response) => {
         '                                       <th scope="col">First Name</th> \n' +
         '                                       <th scope="col">Last Name</th> \n' +
         '                                       <th scope="col">Phone</th> \n' +
+        '                                       <th scope="col">Gender</th> \n' +
         '                               </tr> \n' +
         '                       </thead> \n' +
         '                       <tbody> \n'
@@ -47,6 +48,7 @@ const server = http.createServer((request, response) => {
 	                '                                       <td>' + friends[key][f]["firstName"] + '</td> \n' +
 	                '                                       <td>' + friends[key][f]["lastName"] + '</td> \n' +
 	                '                                       <td>' + friends[key][f]["phone"] + '</td> \n' +
+	                '                                       <td>' + friends[key][f]["gender"] + '</td> \n' +
 	                '                               </tr> \n'
 	            );
 
