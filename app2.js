@@ -44,19 +44,19 @@ const server = http.createServer((request, response) => {
 			'                       </thead> \n' +
 			'                       <tbody> \n'
 		);
-		for (var f in friends[key])
+			for (var f in friends[key])
+				response.write(
+					'                               <tr> \n' +
+					'                                       <td>' + friends[key][f]["firstName"] + '</td> \n' +
+					'                                       <td>' + friends[key][f]["lastName"] + '</td> \n' +
+					'                                       <td>' + friends[key][f]["phone"] + '</td> \n' +
+					'                                       <td>' + friends[key][f]["gender"] + '</td> \n' +
+					'                               </tr> \n'
+				);
 			response.write(
-				'                               <tr> \n' +
-				'                                       <td>' + friends[key][f]["firstName"] + '</td> \n' +
-				'                                       <td>' + friends[key][f]["lastName"] + '</td> \n' +
-				'                                       <td>' + friends[key][f]["phone"] + '</td> \n' +
-				'                                       <td>' + friends[key][f]["gender"] + '</td> \n' +
-				'                               </tr> \n'
+				'                       </tbody> \n' +
+				'               </table> \n'
 			);
-		response.write(
-			'                       </tbody> \n' +
-			'               </table> \n'
-		);
 	    response.write(
 	        '       </body> \n' +
 	        '</html> \n'
