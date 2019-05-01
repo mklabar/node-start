@@ -30,9 +30,10 @@ const server = http.createServer((request, response) => {
 		'				<p>Current time is: ' + currentDate + '</p>'
 	);
 	for (var key in friends){
+		heading = key.replace(key[0], key[0].toUpperCase());
 		response.write(
 			'				<div class="container" style="text-align: left"> \n' +
-			'					<h2>' + key + '</h2><br> \n' +
+			'					<h2>' + heading + '</h2><br> \n' +
 			'				</div>' +
 			'				<table class="table table-bordered table-hover"> \n' +
 			'					<thead> \n' +
