@@ -22,67 +22,41 @@ const server = http.createServer((request, response) => {
         '       </head> \n' +
         '        <body> \n' +
         '               <div class="container" style="text-align: center"> \n' +
-        '               <h1>Another (Another) Example of Node</h1><br> \n'
+        '               <h1>Another Example of Node</h1><br> \n'
 
     );
 	var currentDate = new Date();
     response.write(
         '               <p>Current time is: ' + currentDate + '</p>'
     );
-    response.write(
-        '               <div class="container" style="text-align: left"> \n' +
-        '               <h2></h2>Boys<br> \n' +
-        '               <table class="table table-bordered table-hover"> \n' +
-        '                       <thead> \n' +
-        '                               <tr> \n' +
-        '                                       <th scope="col">First Name</th> \n' +
-        '                                       <th scope="col">Last Name</th> \n' +
-        '                                       <th scope="col">Phone</th> \n' +
-        '                               </tr> \n' +
-        '                       </thead> \n' +
-        '                       <tbody> \n'
-    );
-	for (var key in boys)
-	        for (var f in boys[key])
-	            response.write(
-	                '                               <tr> \n' +
-	                '                                       <td>' + boys[key][f]["firstName"] + '</td> \n' +
-	                '                                       <td>' + boys[key][f]["lastName"] + '</td> \n' +
-	                '                                       <td>' + boys[key][f]["phone"] + '</td> \n' +
-	                '                               </tr> \n'
-	            );
-
-	    response.write(
-	        '                       </tbody> \n' +
-	        '               </table> \n'
-	    );
-    response.write(
-        '               <div class="container" style="text-align: left"> \n' +
-        '               <h2></h2>Boys<br> \n' +
-        '               <table class="table table-bordered table-hover"> \n' +
-        '                       <thead> \n' +
-        '                               <tr> \n' +
-        '                                       <th scope="col">First Name</th> \n' +
-        '                                       <th scope="col">Last Name</th> \n' +
-        '                                       <th scope="col">Phone</th> \n' +
-        '                               </tr> \n' +
-        '                       </thead> \n' +
-        '                       <tbody> \n'
-    );
-	for (var key in girls)
-	        for (var f in girls[key])
-	            response.write(
-	                '                               <tr> \n' +
-	                '                                       <td>' + girls[key][f]["firstName"] + '</td> \n' +
-	                '                                       <td>' + girls[key][f]["lastName"] + '</td> \n' +
-	                '                                       <td>' + girls[key][f]["phone"] + '</td> \n' +
-	                '                               </tr> \n'
-	            );
-
-	    response.write(
-	        '                       </tbody> \n' +
-	        '               </table> \n'
-	    );
+	for (var key in friends)
+		response.write(
+			'               <div class="container" style="text-align: left"> \n' +
+			'               <h2></h2>' + key + '<br> \n' +
+			'               <table class="table table-bordered table-hover"> \n' +
+			'                       <thead> \n' +
+			'                               <tr> \n' +
+			'                                       <th scope="col">First Name</th> \n' +
+			'                                       <th scope="col">Last Name</th> \n' +
+			'                                       <th scope="col">Phone</th> \n' +
+			'                                       <th scope="col">Gender</th> \n' +
+			'                               </tr> \n' +
+			'                       </thead> \n' +
+			'                       <tbody> \n'
+		);
+		for (var f in friends[key])
+			response.write(
+				'                               <tr> \n' +
+				'                                       <td>' + friends[key][f]["firstName"] + '</td> \n' +
+				'                                       <td>' + friends[key][f]["lastName"] + '</td> \n' +
+				'                                       <td>' + friends[key][f]["phone"] + '</td> \n' +
+				'                                       <td>' + friends[key][f]["gender"] + '</td> \n' +
+				'                               </tr> \n'
+			);
+		response.write(
+			'                       </tbody> \n' +
+			'               </table> \n'
+		);
 	    response.write(
 	        '       </body> \n' +
 	        '</html> \n'
