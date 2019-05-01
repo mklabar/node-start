@@ -52,11 +52,11 @@ const server = http.createServer((request, response) => {
 				'							<td>' + friends[key][f]["phone"] + '</td> \n' +
 				'						</tr> \n'
 			);
-			response.write(
-				'					</tbody> \n' +
-				'				</table> \n'
-			);
 		}
+		response.write(
+			'					</tbody> \n' +
+			'				</table> \n'
+		);
 	}
 	response.write(
 		'			</div> \n' +
